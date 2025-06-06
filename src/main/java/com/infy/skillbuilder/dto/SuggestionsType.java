@@ -1,0 +1,13 @@
+package com.infy.skillbuilder.dto;
+
+public enum SuggestionsType {
+    FEATURE_REQUEST,
+    UI_IMPROVEMENT,
+    PERFORMANCE_IMPROVEMENT,
+    SCHEDULING_ENHANCEMENT,
+    NOTIFICATION_IMPROVEMENT,
+    COMMUNICATION_TOOL,
+    SECURITY_PRIVACY,
+    ACCESSIBILITY,
+    OTHER
+}

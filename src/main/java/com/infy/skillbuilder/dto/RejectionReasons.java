@@ -1,0 +1,14 @@
+package com.infy.skillbuilder.dto;
+
+public enum RejectionReasons {
+    PERSONAL_EMERGENCY,
+    HEALTH_ISSUES,
+    WORK_COMMITMRNT,
+    SCHEDULE_CONFLICT,
+    UNEXPECTED_TRAVEL,
+    TECHNICAL_ISSUES,
+    NEED_MORE_PREPARATION,
+    FAMILY_COMMITMENTS,
+    UNFORESEEN_CIRCUMSTANCES,
+    OTHER
+}

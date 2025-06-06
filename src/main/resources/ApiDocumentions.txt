@@ -1,0 +1,648 @@
+Admin API
+
+***********************************************************************************************************
+
+GET -> http://localhost:8080/skillbuilder/adminapi/login?email=john.deo@gmail.com&password=John123
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/adminapi/getAdmin/10001
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+PUT -> http://localhost:8080/skillbuilder/adminapi/updatePersonalDetails/10001
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+PUT -> http://localhost:8080/skillbuilder/adminapi/updatePassword/10001?oldpass=John123&newpass=John@1234
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/adminapi/getName/10001
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+POST -> http://localhost:8080/skillbuilder/adminapi/uploadProfiePicture/10001
+MultiPartFile
+
+
+
+
+
+***********************************************************************************************************
+Mentee API
+
+**********************************************************************************************************
+GET -> http://localhost:8080/skillbuilder/menteeapi/login?email=tina.foster@example.com&password=aipower1
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/menteeapi/getMentee/14
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+POST -> http://localhost:8080/skillbuilder/menteeapi/register
+{
+
+"name":"Himansu",
+"email":"himansu@gmail.com",
+"age":21,
+"password":"Himanau@173"
+
+}
+
+----------------------------------------------------------------------------------------------------
+
+PUT -> http://localhost:8080/skillbuilder/menteeapi/updatePersonalDetails/22
+{
+
+"name":"Himansu S",
+"email":"himansu.s@gmail.com",
+"age":30,
+"profilePic":"himansu.jpg",
+"careerObjective":"System Engineer"
+
+}
+
+----------------------------------------------------------------------------------------------------
+
+PUT -> http://localhost:8080/skillbuilder/menteeapi/updateDesiredSkillsDetails/22
+[
+
+{
+
+"skill": {
+
+"skillId": 2
+}
+},
+{
+
+"skill": {
+
+"skillId": 8
+}
+},
+{
+
+"skill": {
+
+"skillId": 13
+}
+}
+
+]
+
+----------------------------------------------------------------------------------------------------
+
+PUT -> http://localhost:8080/skillbuilder/menteeapi/updateIndustryInterestsDetails/22
+[
+
+{
+
+"industryInterests": {
+
+"specializationId": 6
+}
+},
+{
+
+"industryInterests": {
+
+"specializationId": 18
+}
+},
+{
+
+"industryInterests": {
+
+"specializationId": 27
+}
+}
+
+]
+
+----------------------------------------------------------------------------------------------------
+
+PUT -> http://localhost:8080/skillbuilder/menteeapi/addFavouriteMentor/{menteeId}/{mentorId}
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+PUT -> http://localhost:8080/skillbuilder/menteeapi/updatePassword/12?oldpass=Himanau@1734newpass=Himanau@173
+
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+POST -> http://localhost:8080/skillbuilder/menteeapi/uploadProfiePicture/20
+MultiPartFile
+
+
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/menteeapi/getAllFavouriteMentor/3
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/menteeapi/getName/3
+No Body
+
+
+
+
+
+***********************************************************************************************************
+Mentor API
+
+***********************************************************************************************************
+
+GET -> http://localhost:8080/skillbuilder/mentorapi/login?email=tina.foster@example.com&password=aipower1
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/mentorapi/getMentor/14
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+POST -> http://localhost:8080/skillbuilder/mentorapi/register
+{
+
+"name":"Himansu",
+"email":"himansu@gmail.com",
+"age":21,
+"password":"Himanau@173"
+
+}
+
+----------------------------------------------------------------------------------------------------
+
+PUT -> http://localhost:8080/skillbuilder/mentorapi/updatePersonalDetails/12
+{
+
+"name":"Himansu S",
+"email":"himansu.s@gmail.com",
+"age":30,
+"profilePic":"himansu.jpg",
+"education":"MCA",
+"bio":"abcd",
+"specialization":{
+"specializationId":20
+}
+}
+
+----------------------------------------------------------------------------------------------------
+
+PUT -> http://localhost:8080/skillbuilder/mentorapi/updateSkillDetails/33
+[
+
+{
+
+"skill": {
+
+"skillId": 2
+
+},
+"skillLevel": "INTERMEDIATE"
+
+},
+{
+
+"skill": {
+
+"skillId": 6
+
+},
+"skillLevel": "BEGINNER"
+
+},
+{
+
+"skill": {
+
+"skillId": 11
+
+},
+"skillLevel": "EXPERT"
+
+}
+
+]
+
+----------------------------------------------------------------------------------------------------
+
+PUT -> http://localhost:8080/skillbuilder/mentorapi/updateWorkDetails/33
+[
+
+{
+
+"companyName": "Visionary Solutions",
+"role": "Lead Designer",
+"startDate": "2021-09-01",
+"endDate": "2023-10-01",
+"roleDescription": "Managed the design team and collaborated on UI/UX improvements for flagship products."
+
+},
+{
+
+"companyName": "Vissionary Solutions",
+"role": "Lead Designer",
+"startDate": "2021-09-01",
+"endDate": "2023-10-01",
+"roleDescription": "Managed the design team and collaborated on UI/UX improvements for flagship products."
+
+}
+
+]----------------------------------------------------------------------------------------------------
+
+PUT -> http://localhost:8080/skillbuilder/mentorapi/updateAvailabilityDetails/33
+[
+
+{
+
+"date":"2025-05-07",
+"startTime":"07:30:00",
+"endTime":"08:30:00",
+"timeZone":"UTC-10:00",
+"isRecurring":0,
+"status":"AVAILABLE"
+
+},
+{
+
+"date":"2025-05-08",
+"startTime":"07:30:00",
+"endTime":"08:30:00",
+"timeZone":"UTC-10:00",
+"isRecurring":1,
+"status":"AVAILABLE"
+
+}
+
+]
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/mentorapi/getAvailability/30/monthly
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+PUT -> http://localhost:8080/skillbuilder/mentorapi/updatePassword/22?oldpass=Himanau@1734newpass=Himanau@173
+
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/mentorapi/getAllMentors
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/mentorapi/filterBySpecialization/Cybersecurity
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/mentorapi/filterBySkill/Python
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+POST -> http://localhost:8080/skillbuilder/mentorapi/uploadProfiePicture/20
+MultiPartFile
+
+
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/mentorapi/getName/3
+No Body
+
+
+
+***********************************************************************************************************
+Skill API
+
+***********************************************************************************************************
+
+POST -> http://localhost:8080/skillbuilder/skillapi/register/Java
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/skillapi/getSkills
+No Body
+
+
+
+***********************************************************************************************************
+Report API
+
+***********************************************************************************************************
+
+POST -> http://localhost:8080/skillbuilder/reportapi/register
+{
+
+"userId":12,
+"userType":"MENTEE",
+"categoryOfViolation":"FAKE_REVIEWS",
+"explanation":"Mentee shared private chat content on social media."
+
+}
+
+----------------------------------------------------------------------------------------------------
+
+PUT -> http://localhost:8080/skillbuilder/reportapi/updateReportStatus/17/IMPLEMENTED
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/reportapi/getAllReports
+No
+
+
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/reportapi/findByUserIdAndUserType/10/MENTOR
+No Body
+
+
+
+***********************************************************************************************************
+specializations API
+
+***********************************************************************************************************
+
+GET -> http://localhost:8080/skillbuilder/specializationapi/getSpecialization
+No Body
+
+
+
+***********************************************************************************************************
+Suggestion API
+
+***********************************************************************************************************
+
+POST -> http://localhost:8080/skillbuilder/suggestionapi/register
+{
+
+"userId":3,
+"userType":"MENTOR",
+"suggestionsType":"NOTIFICATION_IMPROVEMENT",
+"description":"dfwfergtrtrvhrhb htrhvrgr grgfvg t hvth gthtr u56 hrh y."
+
+}
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/suggestionapi/getPopularSuggestions
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/suggestionapi/getAllSuggestions
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+PUT -> http://localhost:8080/skillbuilder/suggestionapi/updateSuggestionStatus/17/IMPLEMENTED
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/suggestionapi/findByUserIdAndUserType/10/MENTOR
+No Body
+
+
+
+***********************************************************************************************************
+Appointment API
+
+***********************************************************************************************************
+
+POST -> http://localhost:8080/skillbuilder/appointmentapi/bookAppointment
+{
+
+"agenda":"neifjnvije",
+"duration":"90",
+"date":"2025-06-04",
+"startTime":"15:00",
+"endTime":"17:00",
+"mentor":{
+"mentorId":2
+
+},
+"mentee":{
+"menteeId":10
+}
+}
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/appointmentapi/getAppointmentsByMentor/30
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/appointmentapi/getAppointmentsByMentee/20
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+PUT -> http://localhost:8080/skillbuilder/appointmentapi/acceptBooking/45
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+PUT -> http://localhost:8080/skillbuilder/appointmentapi/rejectBookin/45/UNFORESEEN_CIRCUMSTANCES
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+PUT -> http://localhost:8080/skillbuilder/appointmentapi/cancleAppointment/41/somethingReason
+No
+
+
+
+----------------------------------------------------------------------------------------------------
+
+POST -> http://localhost:8080/skillbuilder/appointmentapi/rescheduleAppointment/22
+{
+
+"agenda":"neifjnvije",
+"duration":"90",
+"date":"2025-06-04",
+"startTime":"15:00",
+"endTime":"17:00",
+"mentor":{
+"mentorId":2
+
+},
+"mentee":{
+"menteeId":10
+}
+}
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/appointmentapi/getUpcommingSessionsByMentee/10
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/appointmentapi/getCompletedSessionsByMentee/10
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/appointmentapi/getTotalSessionDurationByMentee/10
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/appointmentapi/getNextSessionByMentee/10
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/appointmentapi/getUpcommingSessionsByMentor/2
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/appointmentapi/getCompletedSessionsByMentor/2
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/appointmentapi/getConnectedMenteesByMentor/2
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/appointmentapi/getSessionsComplitionRateByMentor/2
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/appointmentapi/getRebookingRateByMentor/2
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/appointmentapi/getLatestAgendasByMentorId/21
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/appointmentapi/findDailyBookingCountsForLast7Days
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/appointmentapi/findWeeklyBookingCountsForLast7Weeks
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/appointmentapi/findMonthlyBookingCountsForLast7Months
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/appointmentapi/getUserRetentionData
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/appointmentapi/getSessionCompletionRate
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/appointmentapi/getAverageSessionDuration
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+PUT -> http://localhost:8080/skillbuilder/appointmentapi/completeSession/18
+No Body
+
+
+
+***********************************************************************************************************
+Notification API
+
+***********************************************************************************************************
+
+GET -> http://localhost:8080/skillbuilder/notificationapi/getNotifications/31/MENTOR
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+DELETE -> http://localhost:8080/skillbuilder/notificationapi/deleteNotificationById/20
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+PUT -> http://localhost:8080/skillbuilder/notificationapi/updateIsRead/18
+No Body
+
+
+
+***********************************************************************************************************
+Reviews API
+
+***********************************************************************************************************
+
+POST -> http://localhost:8080/skillbuilder/reviewapi/registerNewReview/40
+{
+
+"rating":3,
+"reviewDescription":"Hii mentor."
+
+}
+
+----------------------------------------------------------------------------------------------------
+
+PUT -> http://localhost:8080/skillbuilder/reviewapi/updateReview/20?rating=1&desc=Hii sir --It will takeappointment id
+
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/reviewapi/getReview/30 --it will take review id
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/reviewapi/getReviewByMentor/1
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+GET -> http://localhost:8080/skillbuilder/reviewapi/getReviewByMentee/1
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+POST -> http://localhost:8080/skillbuilder/reviewapi/giveResponse/20?response=Thank You.
+No Body
+
+----------------------------------------------------------------------------------------------------
+
+PUT -> http://localhost:8080/skillbuilder/reviewapi/updateResponse/20?response=Thank You.
+No Body
